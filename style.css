@@ -400,9 +400,18 @@ main{
 
 .buttons {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-top: 3rem;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.hero-cta-note {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted-2);
+    margin: 0;
+    opacity: 0.9;
 }
 
 .tag-box.btn-doc-wrapper {
@@ -505,6 +514,20 @@ body.page-accueil .hub-purpose-content {
 
 .hub-purpose-text + .hub-purpose-text {
     margin-top: 1rem;
+}
+
+.page-info-main {
+    min-height: 40vh;
+}
+
+.page-info-content .inline-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.page-info-content .inline-link:hover {
+    text-decoration: underline;
 }
 
 /* FOOTER */
@@ -658,6 +681,24 @@ html.theme-light .footer-logos .footer-logo-light {
     color: var(--text-muted-3);
     margin: 0;
     opacity: 0.9;
+}
+
+.footer-credit {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted-3);
+    margin: 0.5rem 0 0;
+    opacity: 0.85;
+}
+
+.footer-credit-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-credit-link:hover {
+    text-decoration: underline;
 }
 
 /* TABLET RESPONSIVE */
