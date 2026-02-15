@@ -13,8 +13,8 @@
 </head>
 <body class="page-accueil">
     <div class="page-gradient-wrap">
-        <img class="image-gradient" src="gradient.png" alt="gradient">
-        <img class="image-gradient-full" src="gradient.png" alt="">
+        <img class="image-gradient" src="gradient.png" alt="" decoding="async" fetchpriority="high">
+        <img class="image-gradient-full" src="gradient.png" alt="" decoding="async" fetchpriority="low">
         <div class="layer-blur"></div>
 
         <div class="container">
@@ -90,6 +90,8 @@
                 </p>
             </div>
         </section>
+
+            <p class="perf-tip" aria-hidden="true">Pour plus de fluidité, activez «&nbsp;Utiliser l'accélération graphique si disponible&nbsp;» dans les paramètres Chrome (Paramètres &gt; Système).</p>
         </div>
     </div>
 
@@ -131,7 +133,7 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({ duration: 500, once: true });
 
       (function() {
         var themeKey = 'hub-theme';

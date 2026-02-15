@@ -100,6 +100,7 @@ body {
 .page-gradient-wrap {
     position: relative;
     min-height: 100vh;
+    contain: layout;
 }
 
 .image-gradient-full{
@@ -133,6 +134,8 @@ html.theme-light .image-gradient-full {
     box-shadow: 0 0 700px 15px var(--blur-color);
     rotate: -30deg;
     z-index: -1;
+    contain: strict;
+    pointer-events: none;
 }
 
 /* CONTAINER */
@@ -472,6 +475,20 @@ main{
     position: absolute;
     top: 0;
     right: -20%;
+    contain: layout style;
+    will-change: transform;
+}
+
+/* Conseil performance (page d'accueil) */
+.perf-tip {
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted-2);
+    opacity: 0.85;
+    max-width: 32rem;
+    margin: 0 auto 1.5rem;
+    padding: 0 2rem;
+    text-align: center;
 }
 
 /* SECTION À QUOI SERT CE HUB */
