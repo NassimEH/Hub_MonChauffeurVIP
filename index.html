@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MonChauffeurVIP">
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/logo-footer-blanc.png" type="image/png">
     <title>Hub - MonChauffeurVIP</title>
     <script>
-      (function(){var s=localStorage.getItem('hub-theme');var light=s!=='dark';if(light)document.documentElement.classList.add('theme-light');})();
+      (function(){document.documentElement.classList.remove('theme-light');})();
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -18,6 +23,7 @@
         <div class="layer-blur"></div>
 
         <div class="container">
+        <div class="hero-header-bg">
         <header>
             <a href="index.html" data-aos="fade-down" data-aos-duration="600" class="logo">
                 <img src="img/logo MonChauffeurVIP-Blanc.png" alt="HUB MONCHAUFFEURVIP" class="logo-img logo-img-dark">
@@ -33,10 +39,6 @@
             </nav>
 
             <div class="header-right">
-                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème (clair / sombre)" title="Changer de thème">
-                    <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">🌙</span>
-                    <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
-                </button>
                 <a href="#" data-aos="fade-down" data-aos-duration="600" class="tag-box btn-signing-wrapper">
                 <span class="tag">Bienvenue</span>
             </a>
@@ -56,7 +58,7 @@
                 <h1 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="100"
-                data-aos-offset="0" data-aos-duration="700" >BIENVENUE<br>CHER CLIENT</h1>
+                data-aos-offset="0" data-aos-duration="700" >BIENVENUE<br>CHER <span class="h1-accent">CLIENT</span></h1>
 
                 <p data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
@@ -65,35 +67,77 @@
                     Bienvenue dans le HUB MONCHAUFFEURVIP. Votre espace dédié pour gérer vos déplacements en toute sérénité et accéder à tous vos services chauffeur.
                 </p>
                 </div>
+                <spline-viewer data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0" data-aos-duration="900" class="robot-3d" url="https://prod.spline.design/mACEvMQD5reDC3u4/scene.splinecode"></spline-viewer>
                 <a href="vtc.html" class="hero-arrow hero-arrow-next" title="Page suivante (VTC)" aria-label="Page suivante"><span class="hero-arrow-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></a>
             </div>
         </main>
+        </div>
 
-        <spline-viewer data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="100"
-        data-aos-offset="0" data-aos-duration="900"  class="robot-3d"   url="https://prod.spline.design/mACEvMQD5reDC3u4/scene.splinecode"></spline-viewer>
+        <div class="section-divider" role="presentation" aria-hidden="true">
+            <span class="section-divider-line section-divider-line--left"></span>
+            <span class="section-divider-content">
+                <span class="section-divider-icon" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/></svg></span>
+                <span class="section-divider-title">Notre signature</span>
+                <span class="section-divider-icon" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/></svg></span>
+            </span>
+            <span class="section-divider-line section-divider-line--right"></span>
+        </div>
 
-        <section class="hub-purpose" id="a-quoi-sert-ce-hub">
-            <div class="hub-purpose-content"
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="100"
-                data-aos-offset="0"
-                data-aos-duration="600">
-                <h1 class="hub-purpose-title">À quoi sert ce hub ?</h1>
-                <p class="hub-purpose-text description">
-                    MonChauffeurVIP, société créée en 2015, est aujourd'hui à force de travail devenu un véritable écosystème offrant plusieurs services différents, sur différents supports. Ce site hub permet de centraliser tous les services de la marque : vous y retrouvez l'ensemble de l'offre MonChauffeurVIP et pouvez comprendre chaque service et ses spécificités.
-                </p>
-                <p class="hub-purpose-text description">
-                    Que ce soit la réservation VTC avec des véhicules haut de gamme, le taxi en ville avec des tarifs transparents et réglementés, les trajets longue distance pour vos déplacements interurbains ou l'application mobile pour réserver depuis votre smartphone, chaque entrée de ce hub vous oriente vers le bon service. L'objectif est de clarifier l'offre et de vous donner un accès direct à la bonne plateforme selon votre besoin du moment.
-                </p>
-            </div>
-        </section>
+        <div class="below-hero-bg">
+        <div class="below-hero-content">
+            <section class="below-hero-section" id="a-quoi-sert-ce-hub" aria-label="Notre engagement">
+                <header class="below-hero-header">
+                    <span class="below-hero-label">Notre signature</span>
+                    <p class="below-hero-lead">
+                        L'excellence de l'accueil, pensé comme une véritable signature de service.
+                    </p>
+                    <div class="below-hero-bar below-hero-bar--top" aria-hidden="true"></div>
+                </header>
 
+                <div class="below-hero-blocks-grid">
+                    <article class="below-hero-card">
+                        <div class="below-hero-card-header">
+                            <span class="below-hero-card-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                            <span class="below-hero-card-title">Accueil</span>
+                        </div>
+                        <p class="below-hero-text">
+                            Dès votre arrivée, tout est parfaitement orchestré pour vous offrir une expérience fluide, élégante et irréprochable. Accueil personnalisé, gestion attentive de vos bagages, ponctualité absolue et discrétion totale : chaque détail est anticipé avec précision afin de garantir votre confort et votre sérénité.
+                        </p>
+                    </article>
+                    <article class="below-hero-card">
+                        <div class="below-hero-card-header">
+                            <span class="below-hero-card-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg></span>
+                            <span class="below-hero-card-title">Engagement</span>
+                        </div>
+                        <p class="below-hero-text">
+                            Notre engagement repose sur des standards élevés, une présentation soignée et un sens du service qui dépasse les attentes. Plus qu'un simple transfert, nous vous offrons une prise en charge premium, où professionnalisme, raffinement et efficacité se conjuguent à chaque instant.
+                        </p>
+                    </article>
+                    <article class="below-hero-card below-hero-card--full">
+                        <div class="below-hero-card-header">
+                            <span class="below-hero-card-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                            <span class="below-hero-card-title">Excellence</span>
+                        </div>
+                        <p class="below-hero-text">
+                            Parce que votre temps est précieux et votre confort essentiel, nous transformons chacun de vos déplacements en une expérience haut de gamme, maîtrisée et parfaitement exécutée.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="below-hero-bar below-hero-bar--accent" aria-hidden="true"></div>
+
+                <div class="below-hero-closing">
+                    <blockquote class="below-hero-tagline">
+                        Choisissez l'exigence. Choisissez l'élégance.
+                    </blockquote>
+                    <p class="below-hero-cta">
+                        Réservez votre transfert privé et voyagez avec distinction.
+                    </p>
+                    <div class="below-hero-bar below-hero-bar--thin" aria-hidden="true"></div>
+                </div>
+            </section>
             <p class="perf-tip" aria-hidden="true">Pour plus de fluidité, activez «&nbsp;Utiliser l'accélération graphique si disponible&nbsp;» dans les paramètres Chrome (Paramètres &gt; Système).</p>
         </div>
-    </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
@@ -128,6 +172,9 @@
             </div>
         </div>
     </footer>
+        </div>
+        </div>
+    </div>
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.57/build/spline-viewer.js"></script>
 
@@ -135,26 +182,14 @@
     <script>
       AOS.init({ duration: 500, once: true });
 
-      (function() {
-        var themeKey = 'hub-theme';
-        var root = document.documentElement;
-        var toggle = document.getElementById('theme-toggle');
-        function setTheme(light) {
-          root.classList.toggle('theme-light', light);
-          if (toggle) toggle.setAttribute('aria-pressed', light ? 'true' : 'false');
-          try { localStorage.setItem(themeKey, light ? 'light' : 'dark'); } catch (e) {}
-        }
-        function initTheme() {
-          var saved = null;
-          try { saved = localStorage.getItem(themeKey); } catch (e) {}
-          var preferLight = saved !== 'dark';
-          setTheme(preferLight);
-        }
-        if (toggle) {
-          toggle.addEventListener('click', function() { setTheme(!root.classList.contains('theme-light')); });
-        }
-        initTheme();
-      })();
+      (function() { document.documentElement.classList.remove('theme-light'); })();
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js').catch(function() {});
+        });
+      }
     </script>
 </body>
 </html>

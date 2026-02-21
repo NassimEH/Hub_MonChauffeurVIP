@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MonChauffeurVIP">
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/logo-footer-blanc.png" type="image/png">
     <title>App mobile - MonChauffeurVIP</title>
     <script>
-      (function(){var s=localStorage.getItem('hub-theme');var light=s!=='dark';if(light)document.documentElement.classList.add('theme-light');})();
+      (function(){document.documentElement.classList.remove('theme-light');})();
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -18,6 +23,7 @@
         <div class="layer-blur"></div>
 
         <div class="container">
+        <div class="hero-header-bg">
         <header>
             <a href="index.html" data-aos="fade-down" data-aos-duration="600" class="logo">
                 <img src="img/logo-footer-blanc.png" alt="MonChauffeurVIP App" class="logo-img logo-img-dark">
@@ -28,15 +34,11 @@
                 <a data-aos="fade-down" data-aos-duration="600" href="index.html">ACCUEIL</a>
                 <a data-aos="fade-down" data-aos-duration="650" href="vtc.html">VTC</a>
                 <a data-aos="fade-down" data-aos-duration="700" href="taxi.html">TAXI</a>
-                <a data-aos="fade-down" data-aos-duration="2250" href="longue-distance.html">LONGUE DISTANCE</a>
+                <a data-aos="fade-down" data-aos-duration="750" href="longue-distance.html">LONGUE DISTANCE</a>
                 <a data-aos="fade-down" data-aos-duration="800" href="app-mobile.html">APP MOBILE</a>
             </nav>
 
             <div class="header-right">
-                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème (clair / sombre)" title="Changer de thème">
-                    <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">🌙</span>
-                    <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
-                </button>
                 <a href="#" data-aos="fade-down" data-aos-duration="600" class="tag-box btn-signing-wrapper">
                 <span class="tag">Bienvenue</span>
             </a>
@@ -56,7 +58,7 @@
                 <h1 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="100"
-                data-aos-offset="0" data-aos-duration="700" >APP MOBILE</h1>
+                data-aos-offset="0" data-aos-duration="700" >App <span class="h1-accent">mobile</span></h1>
 
                 <p data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
@@ -75,40 +77,71 @@
                     <p class="hero-cta-note">Version Android à venir.</p>
                 </div>
                 </div>
+                <spline-viewer data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0" data-aos-duration="900" class="robot-3d" url="https://prod.spline.design/rKwlCFx1GVrOl1LG/scene.splinecode"></spline-viewer>
                 <a href="index.html" class="hero-arrow hero-arrow-next" title="Page suivante (Accueil)" aria-label="Page suivante"><span class="hero-arrow-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></a>
             </div>
         </main>
-
-        <spline-viewer data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="100"
-        data-aos-offset="0" data-aos-duration="900"  class="robot-3d"   url="https://prod.spline.design/rKwlCFx1GVrOl1LG/scene.splinecode"></spline-viewer>
-
-        <section class="hub-purpose" id="a-quoi-sert-ce-hub">
-            <div class="hub-purpose-content"
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="100"
-                data-aos-offset="0"
-                data-aos-duration="600">
-                <h1 class="hub-purpose-title">Application mobile MonChauffeurVIP</h1>
-                <p class="hub-purpose-text description">
-                    Cette section concerne uniquement l'application mobile MonChauffeurVIP. L'app est disponible uniquement sur iOS pour le moment ; la version Android est à venir. Téléchargez l'app officielle sur l'App Store pour réserver vos trajets VTC, taxi ou longue distance depuis votre iPhone : suivi en temps réel, historique des courses et paiement simplifié, le tout au sein de l'écosystème MonChauffeurVIP.
-                </p>
-                <p class="hub-purpose-text description">
-                    D'autres applications mobiles (MonTaxiVIP, transport longue distance, etc.) seront proposées ultérieurement et auront chacune leur espace dédié sur ce hub. Pour l'instant, l'app mobile disponible est celle de MonChauffeurVIP (iOS uniquement, Android à venir). Utilisez le bouton « Accéder au site » pour accéder à la page de téléchargement sur l'App Store.
-                </p>
-            </div>
-        </section>
         </div>
-    </div>
+
+        <div class="section-divider" role="presentation" aria-hidden="true">
+            <span class="section-divider-line section-divider-line--left"></span>
+            <span class="section-divider-content">
+                <span class="section-divider-icon" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/></svg></span>
+                <span class="section-divider-title">Notre signature</span>
+                <span class="section-divider-icon" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/></svg></span>
+            </span>
+            <span class="section-divider-line section-divider-line--right"></span>
+        </div>
+
+        <div class="below-hero-bg">
+        <div class="below-hero-content">
+            <section class="below-hero-section" id="a-quoi-sert-ce-hub" aria-label="Application mobile MonChauffeurVIP">
+                <header class="below-hero-header">
+                    <p class="below-hero-lead">
+                        VTC, taxi et longue distance dans une seule application.
+                    </p>
+                    <div class="below-hero-bar below-hero-bar--top" aria-hidden="true"></div>
+                </header>
+
+                <article class="below-hero-card below-hero-card--full below-hero-card--single">
+                    <h2 class="below-hero-single-title">Application mobile MonChauffeurVIP</h2>
+                    <div class="below-hero-single-body">
+                        <p class="below-hero-text">
+                            Cette section concerne uniquement l'application mobile MonChauffeurVIP. L'app est disponible uniquement sur iOS pour le moment ; la version Android est à venir. Téléchargez l'app officielle sur l'App Store pour réserver vos trajets VTC, taxi ou longue distance depuis votre iPhone : suivi en temps réel, historique des courses et paiement simplifié, le tout au sein de l'écosystème MonChauffeurVIP.
+                        </p>
+                        <p class="below-hero-text">
+                            D'autres applications mobiles (MonTaxiVIP, transport longue distance, etc.) seront proposées ultérieurement et auront chacune leur espace dédié sur ce hub. Pour l'instant, l'app mobile disponible est celle de MonChauffeurVIP (iOS uniquement, Android à venir). Utilisez le bouton « Accéder à l'app iOS » pour télécharger l'application sur l'App Store.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="below-hero-bar below-hero-bar--accent" aria-hidden="true"></div>
+
+                <div class="below-hero-closing">
+                    <blockquote class="below-hero-tagline">
+                        Réservez partout, en quelques tap.
+                    </blockquote>
+                    <div class="app-qr-block">
+                        <img src="img/frame.png" alt="QR code pour télécharger l'application MonChauffeurVIP sur l'App Store" class="app-qr-image" width="160" height="160" loading="lazy">
+                        <p class="app-qr-label">Scannez pour télécharger l'app</p>
+                    </div>
+                    <div class="below-hero-closing-buttons">
+                        <a href="https://apps.apple.com/fr/app/monchauffeurvip/id6756851845" target="_blank" rel="noopener noreferrer" class="tag-box btn-doc-wrapper">
+                            <span class="tag">Accéder à l'app iOS</span>
+                        </a>
+                    </div>
+                    <div class="below-hero-bar below-hero-bar--thin" aria-hidden="true"></div>
+                </div>
+            </section>
+            <p class="perf-tip" aria-hidden="true">Pour plus de fluidité, activez «&nbsp;Utiliser l'accélération graphique si disponible&nbsp;» dans les paramètres Chrome (Paramètres &gt; Système).</p>
+        </div>
 
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="footer-logos">
-                        <a href="app-mobile.html"><img src="img/logo-footer-blanc.png" alt="App MonChauffeurVIP" class="footer-logo-dark"><img src="img/logo-footer-noir.png" alt="App MonChauffeurVIP" class="footer-logo-light"></a>
+                        <a href="index.html"><img src="img/logo MonChauffeurVIP-Blanc.png" alt="HUB MONCHAUFFEURVIP" class="footer-logo-dark"><img src="img/logo MonChauffeurVIP.png" alt="HUB MONCHAUFFEURVIP" class="footer-logo-light"></a>
                     </div>
                 </div>
                 <nav class="footer-nav" aria-label="Pied de page">
@@ -136,31 +169,22 @@
             </div>
         </div>
     </footer>
+        </div>
+        </div>
+    </div>
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.57/build/spline-viewer.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
-      (function() {
-        var themeKey = 'hub-theme';
-        var root = document.documentElement;
-        var toggle = document.getElementById('theme-toggle');
-        function setTheme(light) {
-          root.classList.toggle('theme-light', light);
-          if (toggle) toggle.setAttribute('aria-pressed', light ? 'true' : 'false');
-          try { localStorage.setItem(themeKey, light ? 'light' : 'dark'); } catch (e) {}
-        }
-        function initTheme() {
-          var saved = null;
-          try { saved = localStorage.getItem(themeKey); } catch (e) {}
-          var preferLight = saved !== 'dark';
-          setTheme(preferLight);
-        }
-        if (toggle) {
-          toggle.addEventListener('click', function() { setTheme(!root.classList.contains('theme-light')); });
-        }
-        initTheme();
-      })();
+      (function() { document.documentElement.classList.remove('theme-light'); })();
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js').catch(function() {});
+        });
+      }
     </script>
 </body>
 </html>

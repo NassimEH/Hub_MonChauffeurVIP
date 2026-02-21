@@ -1,0 +1,33 @@
+{
+  "name": "HUB MonChauffeurVIP",
+  "short_name": "MonChauffeurVIP",
+  "description": "Votre espace dédié pour gérer vos déplacements en toute sérénité. VTC, Taxi, Longue distance.",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "fr",
+  "categories": ["business", "transportation"],
+  "icons": [
+    {
+      "src": "img/logo-footer-blanc.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo-footer-blanc.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo-footer-blanc.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

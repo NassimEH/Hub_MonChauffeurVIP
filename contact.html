@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MonChauffeurVIP">
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/logo-footer-blanc.png" type="image/png">
     <title>Contact - MonChauffeurVIP</title>
     <script>
-      (function(){var s=localStorage.getItem('hub-theme');var light=s!=='dark';if(light)document.documentElement.classList.add('theme-light');})();
+      (function(){document.documentElement.classList.remove('theme-light');})();
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -31,10 +36,6 @@
                 <a data-aos="fade-down" data-aos-duration="800" href="app-mobile.html">APP MOBILE</a>
             </nav>
             <div class="header-right">
-                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Changer de thème (clair / sombre)" title="Changer de thème">
-                    <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">🌙</span>
-                    <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
-                </button>
                 <a href="#" data-aos="fade-down" data-aos-duration="600" class="tag-box btn-signing-wrapper">
                     <span class="tag">Bienvenue</span>
                 </a>
@@ -101,24 +102,14 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
     <script>
-      (function() {
-        var themeKey = 'hub-theme';
-        var root = document.documentElement;
-        var toggle = document.getElementById('theme-toggle');
-        function setTheme(light) {
-          root.classList.toggle('theme-light', light);
-          if (toggle) toggle.setAttribute('aria-pressed', light ? 'true' : 'false');
-          try { localStorage.setItem(themeKey, light ? 'light' : 'dark'); } catch (e) {}
-        }
-        function initTheme() {
-          var saved = null;
-          try { saved = localStorage.getItem(themeKey); } catch (e) {}
-          var preferLight = saved !== 'dark';
-          setTheme(preferLight);
-        }
-        if (toggle) toggle.addEventListener('click', function() { setTheme(!root.classList.contains('theme-light')); });
-        initTheme();
-      })();
+      (function() { document.documentElement.classList.remove('theme-light'); })();
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js').catch(function() {});
+        });
+      }
     </script>
 </body>
 </html>
