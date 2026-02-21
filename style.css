@@ -926,6 +926,49 @@ body.page-app-mobile .hero-cta-note {
     background-color: var(--btn-secondary-hover);
 }
 
+/* Bouton fermer le menu (croix) : visible uniquement dans l'overlay mobile */
+.nav-close-btn {
+    display: none;
+}
+
+/* Bouton burger (visible uniquement en mobile) */
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+.burger-btn:hover {
+    color: var(--accent);
+}
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+body.nav-open .burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+body.nav-open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+body.nav-open .burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .robot-3d{
     position: absolute;
     left: 58%;
@@ -1199,14 +1242,134 @@ html.theme-light .footer-logos .footer-logo-light {
 }
 
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE - Suppression totale des filtres sombres */
 @media (max-width: 768px){
-    header{
-        padding: 1rem 0.1rem;
+    /* Supprime tout overlay gradient / blur (ne pas afficher du tout) */
+    .page-gradient-wrap .image-gradient,
+    .page-gradient-wrap .image-gradient-full,
+    .image-gradient,
+    .image-gradient-full {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
     }
 
-    nav{
+    .page-gradient-wrap .layer-blur,
+    .layer-blur {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* Voile sombre du hero : ne pas générer le pseudo-élément (content: none) + ne pas l'afficher */
+    .hero-header-bg::before {
+        content: none !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        background: none !important;
+    }
+
+    /* Menu nav : fermé par défaut, visible uniquement quand body.nav-open (au clic sur le burger) */
+    body:not(.nav-open) nav#nav-menu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    body.nav-open nav#nav-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    /* Quand le menu est ouvert : le header (contenant le nav) passe au-dessus du hero et de tout le contenu */
+    body.nav-open header {
+        z-index: 10000;
+    }
+
+    header{
+        padding: 1rem 1rem;
+    }
+
+    header .logo {
+        margin-right: auto;
+    }
+
+    .burger-btn {
+        display: flex;
+    }
+
+    .header-right .tag-box.btn-signing-wrapper {
+        display: none !important;
+    }
+
+    nav#nav-menu {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        height: 100dvh;
+        min-height: 100dvh;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 10001;
+        margin: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
+        box-sizing: border-box;
+    }
+    body.nav-open nav#nav-menu {
+        display: flex;
+    }
+    body.nav-open nav#nav-menu a {
+        font-size: 1.25rem;
+    }
+
+    /* Bouton fermer (croix) : visible dans le menu mobile quand il est ouvert */
+    nav#nav-menu .nav-close-btn {
+        display: flex !important;
+        position: absolute;
+        top: max(1rem, env(safe-area-inset-top));
+        right: 1rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 10002;
+        border-radius: 4px;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    nav#nav-menu .nav-close-btn:hover {
+        color: var(--accent);
+    }
+    nav#nav-menu .nav-close-btn:active {
+        transform: scale(0.95);
+    }
+    nav#nav-menu .nav-close-btn svg {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .logo-img {
@@ -1225,30 +1388,68 @@ html.theme-light .footer-logos .footer-logo-light {
         display: none;
     }
 
+    .hero-with-arrows {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    /* Hero : contenu centré avec marges (toutes les pages avec hero) */
     .content{
-        margin-top: 25rem;
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 38rem;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content h1{
+        font-size: 2.5rem;
+        text-align: center;
+        align-self: stretch;
+    }
+    .content .description{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: stretch;
+    }
+    /* Tag type "LONGUE DISTANCE" / "MONCHAUFFEURVIP" centré */
+    .content > .tag-box{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Boutons type "Accéder au site" centrés */
+    .content .buttons{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .content .hero-cta-note{
+        text-align: center;
     }
 
     .robot-3d{
+        position: static;
         scale: 1;
-        left: 58%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: min(50vw, 320px);
+        left: auto;
+        top: auto;
+        transform: none;
+        width: min(80vw, 320px);
         height: min(35vh, 280px);
-    }
-
-    .content{
-        max-width: 38rem;
-        margin-left: 10%;
+        order: 2;
+        margin-top: 1.5rem;
     }
 
     .tag-box{
         width: 12rem;
-    }
-    
-    .content h1{
-        font-size: 2.5rem;
     }
 
     .description{
@@ -1415,28 +1616,29 @@ html.theme-light .footer-logos .footer-logo-light {
     }
 
     .robot-3d{
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: min(70vw, 280px);
+        width: min(85vw, 280px);
         height: min(30vh, 240px);
     }
 
-
     .content{
         max-width: 100%;
-        margin-left: 10%;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 15rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
     }
 
     .tag-box{
         width: 15rem;
         height: 2rem;
     }
-    
+
     .content h1{
         font-size: 2rem;
         margin: 1rem 0;
+        text-align: center;
     }
 
     .hub-purpose {

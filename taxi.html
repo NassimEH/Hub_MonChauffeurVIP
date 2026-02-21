@@ -30,7 +30,8 @@
                 <img src="img/MonTaxiVIPfinal-1-removebg-preview.png" alt="MonTaxiVIP" class="logo-img logo-img-light">
             </a>
 
-            <nav>
+            <nav id="nav-menu" aria-label="Navigation principale">
+                <button type="button" class="nav-close-btn" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
                 <a data-aos="fade-down" data-aos-duration="600" href="index.html">ACCUEIL</a>
                 <a data-aos="fade-down" data-aos-duration="650" href="vtc.html">VTC</a>
                 <a data-aos="fade-down" data-aos-duration="700" href="taxi.html">TAXI</a>
@@ -39,6 +40,11 @@
             </nav>
 
             <div class="header-right">
+                <button type="button" class="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
                 <a href="#" data-aos="fade-down" data-aos-duration="600" class="tag-box btn-signing-wrapper">
                 <span class="tag">Bienvenue</span>
             </a>
@@ -174,6 +180,7 @@
       AOS.init();
       (function() { document.documentElement.classList.remove('theme-light'); })();
     </script>
+    <script src="nav-mobile.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {

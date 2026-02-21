@@ -12,7 +12,8 @@ const STATIC_URLS = [
   'politique-confidentialite.html',
   'style.css',
   'manifest.json',
-  'gradient.png'
+  'gradient.png',
+  'nav-mobile.js'
 ];
 
 self.addEventListener('install', (event) => {
