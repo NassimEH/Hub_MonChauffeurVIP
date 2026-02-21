@@ -1504,6 +1504,10 @@ html.theme-light .footer-logos .footer-logo-light {
     .below-hero-content {
         padding: 2.5rem 1.25rem 3.5rem;
     }
+    /* Accueil : masquer le label "Notre signature" au-dessus de "L'excellence de l'accueil" */
+    body.page-accueil .below-hero-header .below-hero-label {
+        display: none;
+    }
     .below-hero-blocks-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
